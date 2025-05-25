@@ -226,26 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             document.head.appendChild(style);
         }
-    }
-
-    // Mobile menu toggle (if needed for responsive design)
-    function addMobileMenuToggle() {
-        const navContainer = document.querySelector('.nav-container');
-        const navLinks = document.querySelector('.nav-links');
-        
-        // Create mobile menu button
-        const mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.innerHTML = '☰';
-        mobileMenuBtn.className = 'mobile-menu-btn';
-        mobileMenuBtn.style.cssText = `
-            display: none;
-            background: none;
-            border: none;
-            color: #d69b40;
-            font-size: 24px;
-            cursor: pointer;
-        `;
-        
+    
         navContainer.appendChild(mobileMenuBtn);
         
         // Add mobile styles
