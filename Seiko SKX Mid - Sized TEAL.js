@@ -76,8 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isZoomed = false;
             }
         });
-    }
-        
+    
         navContainer.insertBefore(menuToggle, navLinks);
 
         menuToggle.addEventListener('click', function() {
