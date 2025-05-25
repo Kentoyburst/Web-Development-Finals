@@ -77,6 +77,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    const createMobileMenuToggle = () => {
+        const navContainer = document.querySelector('.nav-container');
+        const navLinks = document.querySelector('.nav-links');
+    
+        const menuToggle = document.createElement('button');
+        menuToggle.className = 'menu-toggle';
+        menuToggle.innerHTML = '☰';
+        menuToggle.style.cssText = `
+            display: none;
+            background: none;
+            border: none;
+            color: #d69b40;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        `;
         
         navContainer.insertBefore(menuToggle, navLinks);
 
