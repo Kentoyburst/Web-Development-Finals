@@ -97,8 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
         checkScreenSize();
     };
     
-    createMobileMenuToggle();
-
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
