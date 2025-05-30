@@ -32,6 +32,66 @@ document.addEventListener('DOMContentLoaded', function() {
         thumbnail.setAttribute('tabindex', '0');
     });
 
+    // Add to Cart functionality (from SKX007K)
+    const addToCartBtn = document.querySelector('.add-to-cart-btn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function() {
+            const product = {
+                user_id: 1, // You should get this from session in a real app
+                product_id: 'skx779', // Unique product identifier for Monster Gen 1
+                name: 'Original Seiko Monster Gen 1 SKX779',
+                price: 8999,
+                image: 'img product/Original Seiko Monster Gen 1 SKX779.jpg',
+                specs: 'Model: SKX779, Newly overhauled',
+                condition: 'Newly overhauled'
+            };
+            
+            // Add to cart via AJAX
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(product)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === 'success') {
+                    // Update cart count
+                    updateCartCount();
+                    // Show success message
+                    this.textContent = 'Added to Cart!';
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                    }, 2000);
+                } else {
+                    alert('Failed to add to cart: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to add to cart');
+            });
+        });
+    }
+    
+    // Function to update cart count (from SKX007K)
+    function updateCartCount() {
+        fetch('get_cart_count.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'user_id=1' // Again, get from session in real app
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.querySelectorAll('#cart-count').forEach(el => {
+                el.textContent = data.count;
+            });
+        });
+    }
+
     const checkoutBtn = document.querySelector('.checkout-btn');
     
     if (checkoutBtn) {
@@ -157,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     console.log('Seiko Monster Gen 1 SKX779 Product Page Loaded Successfully');
-    console.log('Features: Image Gallery, Zoom, Mobile Menu, Smooth Transitions, Checkout Modal');
+    console.log('Features: Image Gallery, Zoom, Mobile Menu, Smooth Transitions, Checkout Modal, Cart Integration');
 });
 
 const createCheckoutModal = () => {
@@ -271,13 +331,13 @@ const createCheckoutModal = () => {
                     <option value="San Fernando">San Fernando</option>
                     <option value="Clark">Clark</option>
                     <option value="Other Pampanga Area">Other Pampanga Area</option>
-                    <option value="J&T Shipping">J&T Shipping Nationwide</option>
-                    <option value="DHL Worldwide">DHL Worldwide Shipping</option>
+                    <option value="Courier (J&T)">Courier (J&T) - Nationwide 🇵🇭</option>
+                    <option value="Courier (DHL)">Courier (DHL) - Worldwide ✈️ 🌎</option>
                 </select>
             </div>
             <div style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 5px; color: #555; font-weight: 500;">Shipping Address (if shipping selected):</label>
-                <textarea name="address" rows="3" placeholder="Required only if selecting shipping option" style="
+                <label style="display: block; margin-bottom: 5px; color: #555; font-weight: 500;">Shipping Address (if courier selected):</label>
+                <textarea name="address" rows="3" placeholder="Required only if selecting courier option" style="
                     width: 100%;
                     padding: 10px;
                     border: 2px solid #ddd;
@@ -364,7 +424,7 @@ document.addEventListener('submit', function(e) {
         
         setTimeout(() => {
             let locationText = orderData.meetupLocation;
-            if (orderData.meetupLocation === 'J&T Shipping' || orderData.meetupLocation === 'DHL Worldwide') {
+            if (orderData.meetupLocation.includes('Courier')) {
                 locationText = `${orderData.meetupLocation} to: ${orderData.address}`;
             }
             
