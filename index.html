@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <title>TimeHaven | Premium Watches & Timepieces</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    </style>
 </head>
 <body>
     <header class="header">
@@ -14,10 +19,11 @@
                 TIMEHAVEN
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="product.html">Collections</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.html" class="active">🏠 Home</a>
+                <a href="product.html">⌚ Collections</a>
+                <a href="about.html">ℹ️ About Us</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="view-cart.html">🛒 Your Cart</a>
             </nav>
         </div>
     </header>
@@ -37,7 +43,7 @@
             </div>
             <div class="product-info">
                 <h3>Original Seiko SKX007K</h3>
-                <p class="price">₱11,499</p>
+                <div class="product-price">₱11,499</div>
                 <p>Professional automatic diver's watch featuring Seiko's signature reliability and precision.</p>
                 <div class="product-meta">
                     <div class="product-rating">★★★★★</div>
@@ -53,7 +59,7 @@
             </div>
             <div class="product-info">
                 <h3>Seiko Black Field Watch</h3>
-                <p class="price">₱9,499</p>
+                <div class="product-price">₱9,499</div>
                 <p>Classic field watch with vintage aesthetic and modern Seiko reliability.</p>
                 <div class="product-meta">
                     <div class="product-rating">★★★★☆</div>
@@ -68,7 +74,7 @@
             </div>
             <div class="product-info">
                 <h3>Seiko SKX Mid-Sized "TEAL"</h3>
-                <p class="price">₱13,999</p>
+                <div class="product-price">₱13,999</div>
                 <p>Eye-catching teal dial with premium automatic movement and diver functionality.</p>
                 <div class="product-meta">
                     <div class="product-rating">★★★★★</div>
@@ -109,6 +115,18 @@
                     <p>Collector</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <h2 class="section-title">Stay Updated with Our Latest Collections</h2>
+            <p>Subscribe to our newsletter for exclusive offers, new arrivals, and watch collecting tips.</p>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </section>
 
@@ -158,5 +176,14 @@
             <p>&copy; 2025 TimeHaven. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Page loader animation
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('pageLoader').classList.add('hidden');
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
