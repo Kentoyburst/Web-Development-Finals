@@ -32,6 +32,65 @@ document.addEventListener('DOMContentLoaded', function() {
         thumbnail.setAttribute('tabindex', '0');
     });
 
+    const addToCartBtn = document.querySelector('.add-to-cart-btn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function() {
+            const product = {
+                user_id: 1, // You should get this from session in a real app
+                product_id: 'skx-mid-teal', // Unique product identifier
+                name: 'Seiko SKX Mid-Sized "TEAL"',
+                price: 13999,
+                image: 'img product/Seiko SKX Mid-Sized TEAL.jpg',
+                specs: 'Movement: 4R36 Automatic, 9.8/10 condition (Brand New)',
+                condition: 'Brand New'
+            };
+            
+            // Add to cart via AJAX
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(product)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === 'success') {
+                    // Update cart count
+                    updateCartCount();
+                    // Show success message
+                    this.textContent = 'Added to Cart!';
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                    }, 2000);
+                } else {
+                    alert('Failed to add to cart: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to add to cart');
+            });
+        });
+    }
+    
+    // Function to update cart count
+    function updateCartCount() {
+        fetch('get_cart_count.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'user_id=1' // Again, get from session in real app
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.querySelectorAll('#cart-count').forEach(el => {
+                el.textContent = data.count;
+            });
+        });
+    }
+
     const checkoutBtn = document.querySelector('.checkout-btn');
     
     if (checkoutBtn) {
@@ -76,7 +135,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 isZoomed = false;
             }
         });
+    }
+
+    const createMobileMenuToggle = () => {
+        const navContainer = document.querySelector('.nav-container');
+        const navLinks = document.querySelector('.nav-links');
     
+        const menuToggle = document.createElement('button');
+        menuToggle.className = 'menu-toggle';
+        menuToggle.innerHTML = '☰';
+        menuToggle.style.cssText = `
+            display: none;
+            background: none;
+            border: none;
+            color: #d69b40;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        `;
+        
         navContainer.insertBefore(menuToggle, navLinks);
 
         menuToggle.addEventListener('click', function() {
@@ -86,8 +163,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const checkScreenSize = () => {
             if (window.innerWidth <= 768) {
                 menuToggle.style.display = 'block';
+                navLinks.style.display = 'none';
             } else {
                 menuToggle.style.display = 'none';
+                navLinks.style.display = 'flex';
                 navLinks.classList.remove('mobile-active');
             }
         };
@@ -137,8 +216,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-    console.log('Seiko Mid Teal Product Page Loaded Successfully');
-    console.log('Features: Image Gallery, Zoom, Mobile Menu, Smooth Transitions');
+    console.log('Seiko SKX Mid-Sized TEAL Product Page Loaded Successfully');
+    console.log('Features: Image Gallery, Zoom, Mobile Menu, Smooth Transitions, Cart Integration');
 });
 
 const createCheckoutModal = () => {
