@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections</title>
+    <title>Collections - TimeHaven</title>
     <link rel="stylesheet" href="product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero h1, .table-section h1 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -14,149 +30,305 @@
                 TIMEHAVEN
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="product.html" class="active">Collections</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.html">🏠 Home</a>
+                <a href="product.html" class="active">⌚ Collections</a>
+                <a href="about.html">ℹ️ About Us</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="view-cart.html">🛒 Your Cart</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero" align="center">
-        <h1 style="color: #d69b40;">Collections</h1>
+    <section class="hero">
+        <h1 style="color: #d69b40;">Premium Watch Collections</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Discover our curated selection of exceptional timepieces, each crafted with precision and designed for the discerning watch enthusiast.
+        </p>
+        
+        <!-- Search and Filter Container will be added by JavaScript -->
     </section>
+    
+    <div class="section-divider"></div>
     
     <section class="products">
         <div class="product-card">
-            <img src="img product/Original Seiko SKX007K.jpg" alt="Luxury Watch">
-            <h3 style="color: black;">Original Seiko SKX007K</h3>
-            <p style="color: black; text-align: center;">₱11,499</p>
-            <a href="Original Seiko SKX007K.html" class="view-details-btn">View Full Details</a>
+            <img src="img product/Original Seiko SKX007K.jpg" alt="Original Seiko SKX007K - Professional Diving Watch">
+            <div class="product-info">
+                <h3 style="color: black;">Original Seiko SKX007K</h3>
+                <div class="product-price" style="color: black;">₱11,499</div>
+                <p style="color: rgba(0,0,0,0.8); font-size: 0.9rem; margin: 15px 0;">Classic diving watch with automatic movement and legendary reliability</p>
+                <a href="Original Seiko SKX007K.html" class="view-details-btn">View Full Details →</a>
+            </div>
         </div>
+        
         <div class="product-card">
-            <img src="img product/Seiko Black Field Watch (Vintage Look).jpg" alt="Luxury Watch">
-            <h3 style="color: black;">Seiko Black Field Watch (Vintage Look)</h3>
-            <p style="color: black; text-align: center;">₱9,499</p>
-            <a href="Seiko Black Field Watch (Vintage Look).html" class="view-details-btn">View Full Details</a>
+            <img src="img product/Seiko Black Field Watch (Vintage Look).jpg" alt="Seiko Black Field Watch with Vintage Styling">
+            <div class="product-info">
+                <h3 style="color: black;">Seiko Black Field Watch (Vintage Look)</h3>
+                <div class="product-price" style="color: black;">₱9,499</div>
+                <p style="color: rgba(0,0,0,0.8); font-size: 0.9rem; margin: 15px 0;">Vintage-inspired field watch perfect for everyday adventures</p>
+                <a href="Seiko Black Field Watch (Vintage Look).html" class="view-details-btn">View Full Details →</a>
+            </div>
         </div>
+        
         <div class="product-card">
-            <img src="img product/Seiko SKX Mid - Sized TEAL.jpg" alt="Luxury Watch">
-            <h3 style="color: black;">Seiko SKX Mid - Sized "TEAL"</h3>
-            <p style="color: black; text-align: center;">₱13,999</p>
-            <a href="Seiko SKX Mid - Sized TEAL.html" class="view-details-btn">View Full Details</a>
+            <img src="img product/Seiko SKX Mid - Sized TEAL.jpg" alt="Seiko SKX Mid-Sized Teal Special Edition">
+            <div class="product-info">
+                <h3 style="color: black;">Seiko SKX Mid - Sized "TEAL"</h3>
+                <div class="product-price" style="color: black;">₱13,999</div>
+                <p style="color: rgba(0,0,0,0.8); font-size: 0.9rem; margin: 15px 0;">Limited edition teal dial with premium finishing touches</p>
+                <a href="Seiko SKX Mid - Sized TEAL.html" class="view-details-btn">View Full Details →</a>
+            </div>
         </div>
+        
         <div class="product-card">
-            <img src="img product/Seiko Blue Field Watch.jpg" alt="Luxury Watch">
-            <h3 style="color: black;">Seiko Blue Field Watch</h3>
-            <p style="color: black;text-align: center;">₱9,999</p>
-            <a href="Seiko Blue Field Watch.html" class="view-details-btn">View Full Details</a>
+            <img src="img product/Seiko Blue Field Watch.jpg" alt="Seiko Blue Field Watch - Outdoor Collection">
+            <div class="product-info">
+                <h3 style="color: black;">Seiko Blue Field Watch</h3>
+                <div class="product-price" style="color: black;">₱9,999</div>
+                <p style="color: rgba(0,0,0,0.8); font-size: 0.9rem; margin: 15px 0;">Rugged field watch with striking blue dial and robust construction</p>
+                <a href="Seiko Blue Field Watch.html" class="view-details-btn">View Full Details →</a>
+            </div>
         </div>
+        
         <div class="product-card">
-            <img src="img product/Seiko Batman GMT.jpg" alt="Luxury Watch">
-            <h3 style="color: black;">Seiko "Batman" GMT</h3>
-            <p style="color: black;text-align: center;">₱16,999</p>
-            <a href="Seiko Batman GMT.html" class="view-details-btn">View Full Details</a>
+            <img src="img product/Seiko Batman GMT.jpg" alt="Seiko Batman GMT - Dual Time Zone Watch">
+            <div class="product-info">
+                <h3 style="color: black;">Seiko "Batman" GMT</h3>
+                <div class="product-price" style="color: black;">₱16,999</div>
+                <p style="color: rgba(0,0,0,0.8); font-size: 0.9rem; margin: 15px 0;">Sophisticated GMT watch with iconic blue-black bezel design</p>
+                <a href="Seiko Batman GMT.html" class="view-details-btn">View Full Details →</a>
+            </div>
         </div>
+        
         <div class="product-card">
-            <img src="img product/Original Seiko Monster Gen 1 SKX779.jpg" alt="Luxury Watch">
-            <h3 style="color: black;">Original Seiko Monster Gen 1 SKX779</h3>
-            <p style="color: black; text-align:center">₱8,999</p>
-            <a href="Original Seiko Monster Gen 1 SKX779.html" class="view-details-btn">View Full Details</a>
+            <img src="img product/Original Seiko Monster Gen 1 SKX779.jpg" alt="Original Seiko Monster Gen 1 SKX779">
+            <div class="product-info">
+                <h3 style="color: black;">Original Seiko Monster Gen 1 SKX779</h3>
+                <div class="product-price" style="color: black;">₱8,999</div>
+                <p style="color: rgba(0,0,0,0.8); font-size: 0.9rem; margin: 15px 0;">First generation Monster with distinctive tooth-like hour markers</p>
+                <a href="Original Seiko Monster Gen 1 SKX779.html" class="view-details-btn">View Full Details →</a>
+            </div>
         </div>
+        
         <div class="product-card">
-            <img src="img product/Original Seiko SKX009J.jpg" alt="Luxury Watch">
-            <h3 style="color: black;">Original Seiko SKX009J "PEPSI"</h3>
-            <p style="color: black;text-align: center;">₱9,999</p>
-            <a href="Original Seiko SKX009J.html" class="view-details-btn">View Full Details</a>
+            <img src="img product/Original Seiko SKX009J.jpg" alt="Original Seiko SKX009J Pepsi Bezel">
+            <div class="product-info">
+                <h3 style="color: black;">Original Seiko SKX009J "PEPSI"</h3>
+                <div class="product-price" style="color: black;">₱9,999</div>
+                <p style="color: rgba(0,0,0,0.8); font-size: 0.9rem; margin: 15px 0;">Classic dive watch with iconic red-blue "Pepsi" rotating bezel</p>
+                <a href="Original Seiko SKX009J.html" class="view-details-btn">View Full Details →</a>
+            </div>
         </div>
     </section>
     
+    <div class="section-divider"></div>
+    
     <section class="table-section">
         <div class="container">
-          <h1 style="color: #d69b40; text-align: center; margin-bottom: 30px;">Compare Our Watches</h1>
-          <div class="table-responsive">
-            <table class="comparison-table">
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th>Price</th>
-                  <th>Movement</th>
-                  <th>Case Diameter</th>
-                  <th>Water Resistance</th>
-                  <th>Crystal</th>
-                  <th>Warranty</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Original Seiko SKX007K</td>
-                  <td>₱11,499</td>
-                  <td>Automatic (7S26)</td>
-                  <td>42mm</td>
-                  <td>200M</td>
-                  <td>Hardlex</td>
-                  <td>3 Months Service</td>
-                </tr>
-                <tr>
-                  <td>Seiko Black Field Watch</td>
-                  <td>₱9,499</td>
-                  <td>Automatic (4R36)</td>
-                  <td>39.4mm</td>
-                  <td>10 bar</td>
-                  <td>Hardlex</td>
-                  <td>Standard</td>
-                </tr>
-                <tr>
-                  <td>Seiko SKX Mid-Sized "TEAL"</td>
-                  <td>₱13,999</td>
-                  <td>Automatic (4R36)</td>
-                  <td>38.0mm</td>
-                  <td>10 bar</td>
-                  <td>Hardlex with lenses</td>
-                  <td>Standard</td>
-                </tr>
-                <tr>
-                  <td>Seiko Blue Field Watch</td>
-                  <td>₱9,999</td>
-                  <td>Automatic (4R36)</td>
-                  <td>39.4mm</td>
-                  <td>10 bar</td>
-                  <td>Hardlex</td>
-                  <td>Standard</td>
-                </tr>
-                <tr>
-                  <td>Seiko "Batman" GMT</td>
-                  <td>₱16,999</td>
-                  <td>Automatic (4R34)</td>
-                  <td>42.5mm</td>
-                  <td>10 bar</td>
-                  <td>Hardlex with lenses</td>
-                  <td>Standard</td>
-                </tr>
-                <tr>
-                  <td>Original Seiko Monster Gen 1</td>
-                  <td>₱8,999</td>
-                  <td>Automatic (7S26)</td>
-                  <td>42mm</td>
-                  <td>200M</td>
-                  <td>Hardlex</td>
-                  <td>3 Months Service</td>
-                </tr>
-                <tr>
-                  <td>Original Seiko SKX009J "PEPSI"</td>
-                  <td>₱9,999</td>
-                  <td>Automatic (7S26)</td>
-                  <td>42mm</td>
-                  <td>200M</td>
-                  <td>Hardlex</td>
-                  <td>3 Months Service</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <div class="table-header-enhanced">
+                <h1>Compare Our Timepieces</h1>
+                <p class="table-subtitle">Find the perfect watch for your lifestyle and preferences</p>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>🔍 Model</th>
+                            <th>💰 Price</th>
+                            <th>⚙️ Movement</th>
+                            <th>📏 Case Diameter</th>
+                            <th>🌊 Water Resistance</th>
+                            <th>💎 Crystal</th>
+                            <th>🛡️ Warranty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Original Seiko SKX007K</strong></td>
+                            <td><strong>₱11,499</strong></td>
+                            <td>Automatic (7S26)</td>
+                            <td>42mm</td>
+                            <td>200M</td>
+                            <td>Hardlex</td>
+                            <td>3 Months Service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seiko Black Field Watch</strong></td>
+                            <td><strong>₱9,499</strong></td>
+                            <td>Automatic (4R36)</td>
+                            <td>40mm</td>
+                            <td>100M</td>
+                            <td>Hardlex</td>
+                            <td>3 Months Service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seiko SKX Mid-Sized "TEAL"</strong></td>
+                            <td><strong>₱13,999</strong></td>
+                            <td>Automatic (7S26)</td>
+                            <td>38mm</td>
+                            <td>200M</td>
+                            <td>Sapphire</td>
+                            <td>6 Months Service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seiko Blue Field Watch</strong></td>
+                            <td><strong>₱9,999</strong></td>
+                            <td>Automatic (4R36)</td>
+                            <td>42mm</td>
+                            <td>100M</td>
+                            <td>Hardlex</td>
+                            <td>3 Months Service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seiko "Batman" GMT</strong></td>
+                            <td><strong>₱16,999</strong></td>
+                            <td>Automatic (NH34)</td>
+                            <td>42mm</td>
+                            <td>200M</td>
+                            <td>Sapphire</td>
+                            <td>1 Year Service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Original Seiko Monster Gen 1</strong></td>
+                            <td><strong>₱8,999</strong></td>
+                            <td>Automatic (7S26)</td>
+                            <td>42mm</td>
+                            <td>200M</td>
+                            <td>Hardlex</td>
+                            <td>3 Months Service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Original Seiko SKX009J "PEPSI"</strong></td>
+                            <td><strong>₱9,999</strong></td>
+                            <td>Automatic (7S26)</td>
+                            <td>42mm</td>
+                            <td>200M</td>
+                            <td>Hardlex</td>
+                            <td>3 Months Service</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </section>
+    </section>
 
+    <div class="section-divider"></div>
+
+    <section class="newsletter-section" style="padding: 60px 20px; background: linear-gradient(135deg, #f8f5f0 0%, #e8e2d8 100%); text-align: center;">
+        <div class="container">
+            <h2 style="font-family: 'Playfair Display', serif; color: #d69b40; margin-bottom: 20px;">Stay Updated with Our Latest Collections</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; color: #666;">Subscribe to our newsletter for exclusive offers, new arrivals, and watch collecting tips.</p>
+            
+            <form class="newsletter-form" style="max-width: 500px; margin: 0 auto;">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" placeholder="Your email address" required 
+                           style="flex: 1; min-width: 200px; padding: 15px 20px; border-radius: 30px; border: 2px solid #d69b40; background: white; font-size: 16px;">
+                    <button type="submit" 
+                            style="background: linear-gradient(135deg, #d69b40 0%, #e8a854 100%); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(214, 155, 64, 0.3);">
+                        Subscribe
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer style="background: linear-gradient(135deg, #2b1d0e 0%, #3d2a15 100%); color: #d69b40; padding: 40px 20px; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">TimeHaven</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Your trusted source for premium timepieces since 2010. We specialize in authentic, high-quality watches for collectors and enthusiasts.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="index.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+                        <li style="margin-bottom: 8px;"><a href="product.html" style="color: #afa28e; text-decoration: none; transition: color 0.3s ease;">Collections</a></li>
+                        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;">About Us</a></li>
+                        <li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: color 0.3s ease;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Contact Us</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;">📞 +63 912 345 6789</p>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;">✉️ info@timehaven.com</p>
+                    <p style="color: rgba(255, 255, 255, 0.8);">🏢 123 Watch Street, Manila, Philippines</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(214, 155, 64, 0.2); padding-top: 20px;">
+                <p style="color: rgba(214, 155, 64, 0.6); font-size: 14px;">© 2025 TimeHaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page loader animation
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('pageLoader').classList.add('hidden');
+            }, 1000); // 1 second delay to ensure smooth transition
+        });
+
+        // Search and filter functionality would be added here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create search and filter elements dynamically
+            const heroSection = document.querySelector('.hero');
+            const searchFilterContainer = document.createElement('div');
+            searchFilterContainer.className = 'search-filter-container';
+            
+            searchFilterContainer.innerHTML = `
+                <input type="text" id="watch-search" placeholder="Search watch models...">
+                <select id="price-range">
+                    <option value="">All Price Ranges</option>
+                    <option value="0-10000">Under ₱10,000</option>
+                    <option value="10000-15000">₱10,000 - ₱15,000</option>
+                    <option value="15000-20000">₱15,000 - ₱20,000</option>
+                    <option value="20000">Over ₱20,000</option>
+                </select>
+            `;
+            
+            heroSection.appendChild(searchFilterContainer);
+            
+            // Add event listeners for search and filter
+            const searchInput = document.getElementById('watch-search');
+            const priceFilter = document.getElementById('price-range');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            function filterProducts() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const priceRange = priceFilter.value;
+                
+                productCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const priceText = card.querySelector('.product-price').textContent;
+                    const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+                    
+                    let matchesSearch = title.includes(searchTerm);
+                    let matchesPrice = true;
+                    
+                    if (priceRange) {
+                        const [min, max] = priceRange.split('-').map(Number);
+                        if (max) {
+                            matchesPrice = price >= min && price <= max;
+                        } else {
+                            matchesPrice = price >= min;
+                        }
+                    }
+                    
+                    if (matchesSearch && matchesPrice) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            searchInput.addEventListener('input', filterProducts);
+            priceFilter.addEventListener('change', filterProducts);
+        });
+    </script>
 </body>
-<script src="product.js"></script>
 </html>
