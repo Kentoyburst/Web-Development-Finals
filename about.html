@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | TimeHaven</title>
     <link rel="stylesheet" href="about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Helvetica:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -15,16 +17,24 @@
                 TIMEHAVEN
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="product.html">Collections</a>
-                <a href="about.html" class="active">About Us</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.html">🏠 Home</a>
+                <a href="product.html">⌚ Collections</a>
+                <a href="about.html" class="active">ℹ️ About Us</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="view-cart.html">🛒 Your Cart</a>
             </nav>
         </div>
     </header>
 
+    <section class="hero-section">
+        <h1>Our Story</h1>
+        <p>Discover the legacy and passion behind TimeHaven, your trusted curator of exceptional timepieces</p>
+    </section>
+
     <div class="container">
         <div class="about-section">
+            <img src="img product/watch making.webp" alt="Watchmaking craftsmanship" class="about-image">
+            
             <div class="about-content">
                 <h2>About TimeHaven</h2>
                 <p>Founded in 2024, TimeHaven emerges from a legacy of over 50 years in fine watchmaking and horology. We are a trusted curator of premium timepieces, bringing together exceptional craftsmanship, timeless design, and unparalleled precision.</p>
@@ -42,8 +52,65 @@
                 <p>Beyond selling timepieces, we are passionate about educating and guiding our customers in their journey to finding the perfect watch. Whether you're making your first investment in luxury watches or adding to an established collection, our knowledgeable team is here to assist you with personalized recommendations, maintenance tips, and exclusive insights into the world of horology.</p>
                 <p>At TimeHaven, we don't just sell watches—we celebrate the artistry, heritage, and innovation that go into every ticking second. Join us in experiencing the timeless elegance of fine watchmaking.</p>
             </div>
+            
+            <div class="section-divider"></div>
+            
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--secondary); font-size: 2.5rem; margin-bottom: 20px;">Our Core Values</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; color: var(--text-dark); font-size: 1.1rem;">
+                These principles guide everything we do at TimeHaven, from selecting timepieces to serving our customers
+            </p>
+            
+            <div class="values">
+                <div class="value-item">
+                    <h3>Authenticity</h3>
+                    <p>Every watch in our collection is guaranteed authentic, sourced directly from manufacturers or trusted partners. We provide complete documentation and transparency for every timepiece.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>Expertise</h3>
+                    <p>Our team consists of passionate horologists with decades of combined experience. We're here to share our knowledge and help you make informed decisions about your collection.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>Quality</h3>
+                    <p>We meticulously inspect every watch before it reaches you, ensuring it meets our high standards for craftsmanship, precision, and aesthetic perfection.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>Service</h3>
+                    <p>From personalized consultations to after-sales support, we're committed to providing an exceptional experience at every step of your watch journey.</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <footer style="background: linear-gradient(135deg, #2b1d0e 0%, #3d2a15 100%); color: #d69b40; padding: 40px 20px; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">TimeHaven</h3>
+                    <p style="color: rgba(214, 155, 64, 0.8); line-height: 1.6;">Your trusted source for premium timepieces since 2010. We specialize in authentic, high-quality watches for collectors and enthusiasts.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="index.html" style="color: rgba(214, 155, 64, 0.8); text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+                        <li style="margin-bottom: 8px;"><a href="product.html" style="color: rgba(214, 155, 64, 0.8); text-decoration: none; transition: color 0.3s ease;">Collections</a></li>
+                        <li style="margin-bottom: 8px;"><a href="about.html" style="color: #d69b40; text-decoration: none; transition: color 0.3s ease;">About Us</a></li>
+                        <li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(214, 155, 64, 0.8); text-decoration: none; transition: color 0.3s ease;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Contact Us</h3>
+                    <p style="color: rgba(214, 155, 64, 0.8); margin-bottom: 8px;">📞 +63 912 345 6789</p>
+                    <p style="color: rgba(214, 155, 64, 0.8); margin-bottom: 8px;">✉️ info@timehaven.com</p>
+                    <p style="color: rgba(214, 155, 64, 0.8);">🏢 123 Watch Street, Manila, Philippines</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(214, 155, 64, 0.2); padding-top: 20px;">
+                <p style="color: rgba(214, 155, 64, 0.6); font-size: 14px;">© 2023 TimeHaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
