@@ -14,10 +14,13 @@
                 TIMEHAVEN
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="product.html">Collections</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.html">🏠 Home</a>
+                <a href="product.html">⌚ Collections</a>
+                <a href="about.html">ℹ️ About Us</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="view-cart.html" id="view-cart-btn" class="cart-link">
+                    Your Cart (<span id="cart-count">0</span>)
+                </a>
             </nav>
         </div>
     </header>
@@ -33,7 +36,10 @@
         <div class="product-info">
             <h2>Seiko Blue Field Watch</h2>
             <p class="price">₱9,999</p>
-            <button class="checkout-btn">Check out</button>
+            <div class="button-group">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="checkout-btn">Check out</button>
+            </div>
             <p style="color: #000;">
                 <b>Seiko Blue Field Watch</b><br>
                 <b>Model:</b> SRPG29<br>
@@ -69,4 +75,5 @@
     </section>
 </body>
 <script src="Seiko Blue Field Watch.js"></script>
+<script src="view-cart.js"></script>
 </html>
