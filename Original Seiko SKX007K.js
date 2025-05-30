@@ -32,6 +32,64 @@ document.addEventListener('DOMContentLoaded', function() {
         thumbnail.setAttribute('tabindex', '0');
     });
 
+    const addToCartBtn = document.querySelector('.add-to-cart-btn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function() {
+            const product = {
+                user_id: 1, // You should get this from session in a real app
+                product_id: 'skx007k', // Unique product identifier
+                name: 'Original Seiko SKX007K',
+                price: 11499,
+                image: 'img product/Original Seiko SKX007K.jpg',
+                specs: 'Caliber: 7S26, 21 Jewels, 200M Water Resistance',
+                condition: 'Newly overhauled'
+            };
+            
+            // Add to cart via AJAX
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(product)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === 'success') {
+                    // Update cart count
+                    updateCartCount();
+                    // Show success message
+                    this.textContent = 'Added to Cart!';
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                    }, 2000);
+                } else {
+                    alert('Failed to add to cart: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to add to cart');
+            });
+        });
+    }
+    
+    // Function to update cart count
+    function updateCartCount() {
+        fetch('get_cart_count.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'user_id=1' // Again, get from session in real app
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.querySelectorAll('#cart-count').forEach(el => {
+                el.textContent = data.count;
+            });
+        });
+    }
     const checkoutBtn = document.querySelector('.checkout-btn');
     
     if (checkoutBtn) {
@@ -156,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     console.log('Seiko SKX007K Product Page Loaded Successfully');
-    console.log('Features: Image Gallery, Zoom, Mobile Menu, Smooth Transitions');
+    console.log('Features: Image Gallery, Zoom, Mobile Menu, Smooth Transitions, Cart Integration');
 });
 
 const createCheckoutModal = () => {
@@ -400,105 +458,4 @@ document.addEventListener('keydown', function(e) {
         checkoutModal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
-    const createCheckoutModal = () => {
-        const modal = document.createElement('div');
-        modal.id = 'checkout-modal';
-        
-        const modalContent = document.createElement('div');
-        modalContent.className = 'modal-content';
-        
-        modalContent.innerHTML = `
-            <span id="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Complete Your Purchase</h2>
-            </div>
-            <div class="product-summary">
-                <h3>Original Seiko SKX007K</h3>
-                <p>Movement: 7S26 Automatic</p>
-                <p>Condition: Newly overhauled</p>
-                <p class="price">₱11,499</p>
-            </div>
-            <form id="checkout-form" class="checkout-form">
-                <div>
-                    <label>Full Name:</label>
-                    <input type="text" name="fullName" required>
-                </div>
-                <div>
-                    <label>Email:</label>
-                    <input type="email" name="email" required>
-                </div>
-                <div>
-                    <label>Phone Number:</label>
-                    <input type="tel" name="phone" required>
-                </div>
-                <div>
-                    <label>Preferred Meetup Location:</label>
-                    <select name="meetupLocation" required>
-                        <option value="">Select location...</option>
-                        <option value="Angeles City">Angeles City</option>
-                        <option value="San Fernando">San Fernando</option>
-                        <option value="Clark">Clark</option>
-                        <option value="Other Pampanga Area">Other Pampanga Area</option>
-                        <option value="Courier (J&T)">Courier (J&T) - Nationwide 🇵🇭</option>
-                        <option value="Courier (DHL)">Courier (DHL) - Worldwide ✈️ 🌎</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Shipping Address (if courier selected):</label>
-                    <textarea name="address" placeholder="Required only if selecting courier option"></textarea>
-                </div>
-                <div class="form-note">
-                    <strong>Note:</strong> This watch has been newly overhauled and is in very good running condition. 
-                    Includes: Watch, Replacement Box and Double Box, AM Jubilee Bracelet. 3 Months Free Service Warranty included.
-                </div>
-                <div class="form-actions">
-                    <button type="button" id="cancel-checkout">Cancel</button>
-                    <button type="submit" id="submit-order">Submit Order</button>
-                </div>
-            </form>
-        `;
-        
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-        
-        // Add the animation style
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes modalSlideIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(-50px) scale(0.9);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0) scale(1);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        return modal;
-    };
-    
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-    
-    // Add the animation style
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    return modal;
 });
-
