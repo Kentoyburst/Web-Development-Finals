@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
+    <title>Seiko Black Field Watch (Vintage Look) | TimeHaven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="Original Seiko SKX007K.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -14,17 +17,20 @@
                 TIMEHAVEN
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="product.html">Collections</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.html">🏠 Home</a>
+                <a href="product.html">⌚ Collections</a>
+                <a href="about.html">ℹ️ About Us</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="view-cart.html" id="view-cart-btn" class="cart-link">
+                    🛒 Your Cart (<span id="cart-count">0</span>)
+                </a>
             </nav>
         </div>
     </header>
 
     <section class="product-detail">
         <div class="product-images">
-            <img src="img product/Seiko Black Field Watch (Vintage Look).jpg" alt="Original Seiko SKX007K" class="main-image">
+            <img src="img product/Seiko Black Field Watch (Vintage Look).jpg" alt="Seiko Black Field Watch (Vintage Look)" class="main-image" id="main-image">
             <div class="thumbnail-images">
                 <img src="img product/Seiko Black Field Watch (Vintage Look) angle 1.jpg" alt="Angle 1" class="thumbnail">
                 <img src="img product/Seiko Black Field Watch (Vintage Look) angle 2.jpg" alt="Angle 2" class="thumbnail">
@@ -34,40 +40,191 @@
         <div class="product-info">
             <h2>Seiko Black Field Watch (Vintage Look)</h2>
             <p class="price">₱9,499</p>
-            <button class="checkout-btn">Check out</button>
-            <p style="color: black;">
-                <b>Seiko Black Field Watch (Vintage Look)</b><br>
-                <b>Model:</b> SRPG35<br>
-                <b>Condition:</b> 9/10 (has a very small scratch)<br>
-                <b>Price:</b> ₱9,499<br>
-                <b>Meetup:</b> Around Pampanga<br>
-                <b>Courier:</b> J&T (Buyer pays for SF)<br>
-                <b>Inclusion:</b> Watch, Original Nato Strap, After Market Leather Strap, Hang tag, Pin Bar tool, Actual Box, and Double Box.<br>
-                <b>On Hand</b><br><br>
-            
-                Specifications:<br>
-                <b>Crystal:</b> Hardlex<br>
-                <b>Caliber Number:</b> 4R36<br>
-                <b>Movement Type:</b> Automatic with Manual winding<br>
-                <b>Power Reserve:</b> Approx. 41 hours<br>
-                <b>Jewels:</b> 24<br>
-                <b>Stop Seconds Hand Function:</b> Yes<br>
-                <b>Day/Date Display:</b> Yes<br>
-                <b>Case Material:</b> Stainless steel<br>
-                <b>Lumibrite on Hands and Index(es):</b> Yes<br>
-                <b>Clasp:</b> Three-fold clasp with push button release<br>
-                <b>Case Back:</b> See-through, screw case back<br>
-                <b>Water Resistance:</b> 10 bar<br>
-                <b>Weight:</b> 146g<br><br>
-            
-                Approximate Measurements:<br>
-                <b>Case Diameter:</b> 39.4mm<br>
-                <b>Case Thickness:</b> 13.2mm<br><br>
-            
+            <div class="button-group">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="checkout-btn">Check out</button>
+            </div>
+            <p>
+                <b>Model:</b> SRPG35 <br>
+                <b>Condition:</b> 9/10 (has a very small scratch) <br>
+                <b>Meetup:</b> Around Pampanga <br>
+                <b>Shipping:</b> J&T Shipping Nationwide 🇵🇭 & DHL Worldwide ✈️ 🌎 <br>
+                <br>
+                <b>Specifications:</b> <br>
+                Stainless Steel Case <br>
+                Automatic Movement with Manual Winding <br>
+                Caliber: 4R36 <br>
+                Hardlex Crystal <br>
+                24 Jewels <br>
+                Black Dial with Vintage Look <br>
+                Analog Display <br>
+                Lumibrite Hands And Markers <br>
+                Day And Date Display <br>
+                Stop Seconds Hand Function <br>
+                Power Reserve: Approx. 41 hours <br>
+                10 Bar Water Resistance <br>
+                Approximate Case Diameter: 39.4mm <br>
+                Approximate Case Thickness: 13.2mm <br>
+                Weight: 146g <br>
+                <br>
+                ✅ Three-fold clasp with push button release <br>
+                ✅ See-through, screw case back <br>
+                ✅ Complete with all original accessories <br>
+                <br>
+                <b>Inclusion:</b> Watch, Original Nato Strap, After Market Leather Strap, Hang tag, Pin Bar tool, Actual Box, and Double Box <br>
+                <br>
                 <b>Disclaimer:</b> You are dealing with a pre-owned watch, expect signs of usage and please manage your expectations.
             </p>
         </div>
     </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <div class="cart-actions">
+                <button id="clear-cart">Clear Cart</button>
+                <button id="proceed-checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Thumbnail image click handler
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                // Update main image
+                document.getElementById('main-image').src = this.src;
+                
+                // Update active thumbnail
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Initialize first thumbnail as active
+        document.querySelector('.thumbnail').classList.add('active');
+
+        // Cart functionality
+        let cart = [];
+        const cartCount = document.getElementById('cart-count');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCart = document.getElementById('close-cart');
+        const viewCartBtn = document.getElementById('view-cart-btn');
+        const addToCartBtn = document.querySelector('.add-to-cart-btn');
+        const clearCartBtn = document.getElementById('clear-cart');
+        const proceedCheckoutBtn = document.getElementById('proceed-checkout');
+
+        // Add to cart button click handler
+        addToCartBtn.addEventListener('click', function() {
+            const product = {
+                name: 'Seiko Black Field Watch (Vintage Look)',
+                price: 9499,
+                image: 'img product/Seiko Black Field Watch (Vintage Look).jpg',
+                quantity: 1
+            };
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.name === product.name);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push(product);
+            }
+            
+            updateCart();
+            showCartModal();
+            
+            // Animation feedback
+            this.textContent = 'Added to Cart!';
+            setTimeout(() => {
+                this.textContent = 'Add to Cart';
+            }, 2000);
+        });
+
+        // View cart button click handler
+        viewCartBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showCartModal();
+        });
+
+        // Close cart modal
+        closeCart.addEventListener('click', function() {
+            cartModal.style.display = 'none';
+        });
+
+        // Clear cart button
+        clearCartBtn.addEventListener('click', function() {
+            cart = [];
+            updateCart();
+        });
+
+        // Proceed to checkout
+        proceedCheckoutBtn.addEventListener('click', function() {
+            window.location.href = 'view-cart.html';
+        });
+
+        // Update cart count and modal
+        function updateCart() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart modal
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalContainer = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
+                cartTotalContainer.innerHTML = '';
+                return;
+            }
+            
+            cartItemsContainer.innerHTML = '';
+            let totalPrice = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">₱${item.price.toLocaleString()} × ${item.quantity}</div>
+                    </div>
+                    <div class="cart-item-remove">✕</div>
+                `;
+                
+                // Add remove item functionality
+                cartItem.querySelector('.cart-item-remove').addEventListener('click', function() {
+                    cart = cart.filter(cartItem => cartItem.name !== item.name);
+                    updateCart();
+                });
+                
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            cartTotalContainer.innerHTML = `<strong>Total: ₱${totalPrice.toLocaleString()}</strong>`;
+        }
+
+        // Show cart modal
+        function showCartModal() {
+            cartModal.style.display = 'block';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === cartModal) {
+                cartModal.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="Seiko Black Field Watch (Vintage Look).js"></script>
+    <script src="view-cart.js"></script>
 </body>
-<script src="Seiko Black Field Watch (Vintage Look).js"></script>
 </html>
